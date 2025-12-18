@@ -344,10 +344,12 @@ hr{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-}
-.f-pages{
+    text-align: center;
     
+}
+.f-links{
+    display: flex;
+    justify-content: space-evenly;
     font-size: 0.75rem;
     margin-bottom: 10px;
 }
