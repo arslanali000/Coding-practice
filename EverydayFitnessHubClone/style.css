@@ -139,7 +139,7 @@
   background-size: cover;
   background-size: 110%;
   background-repeat: no-repeat;
-  animation: bgCircle 9s linear infinite ;
+  animation: bgCircle 10s linear infinite ;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -193,4 +193,42 @@ button:hover{
   color: black;
   margin: 50px;
 }
+.coll-pages{
+  height: 220px;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+
+  
+}
+.page{
+  height: 300px;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  /* overflow: hidden; */
+
+}
+#p-img{
+    height: 220px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+
+  
+
+  }
+  #p-desc{
+    color: black;
+    font-size: 22px;
+    margin-top: 20px;
+  }
+  #p-img:hover {
+  transform: scale(1.03);
+  transition-duration: 1s;
+  box-shadow: 0px 0px 10px rgb(133, 131, 131);
+}
+
 
