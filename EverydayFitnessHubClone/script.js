@@ -1,5 +1,4 @@
 
-<<<<<<< HEAD
 // let modeBtn = document.querySelector(".change-mode");
 // let currMode = "light";
 // let lastDiv = document.querySelector("body");
@@ -29,6 +28,3 @@
 
 
  
-=======
-
->>>>>>> b0aed464bad310fcaaebd5c2775e1e8a3b812329
