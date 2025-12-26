@@ -77,6 +77,10 @@
         </div>
         <div class="featured-product">
             <div class="feat-prod-img"></div>
+            <div id="imageModal" class="modal">
+  <span class="close-btn" id="forceCloseImg">&times;</span>
+  <img class="full-screen-preview" id="fullScreenImg">
+</div>
             <div class="feat-prod-desc">
                 <h4>EverydayFitnessHub</h4>
                 <div class="rating"></div>
@@ -86,8 +90,25 @@
                 <div id="sale-price">$424.00 AUD</div>
                 <span id="sale">Sale</span>
                 </div>
-                <button class="add-cart">Add to cart</button>
-                <button class="Buy">Buy iy now</button>
+                <button id="addToCartBtn">Add to Cart</button>
+
+<div id="cartModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>Success!</h2>
+    <p>Item has been added to your cart.</p>
+     <button id="checkout" onclick="location.href='/checkout'">Go to Checkout</button>
+  </div>
+</div>
+            <button id="Buy">Buy iy now</button>
+             <div id="buyModal" class="modal">
+                 <div class="modal-content">
+                 <span class="close-btn1">&times;</span>
+                 <h2>Congrats!</h2>
+                 <p>you have bought the Item.</p>
+                <button id="checkout" onclick="location.href='/checkout'">Go to Checkout</button>
+                </div>
+               </div>
 
 
             </div>
@@ -126,7 +147,9 @@
             <p>Subscribe to our emails</p>
             <label class="f-email-type">
                 <input type="text" placeholder="Type Email" class="email-input">
+               
             </label>
+            
         </div>
     </footer>
     <script src="script.js"></script>

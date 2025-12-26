@@ -235,11 +235,12 @@ button:hover{
   transition-duration: 1s;
   box-shadow: 0px 0px 10px rgb(133, 131, 131);
 }
+/* Featured Section */
 
 .featured-product{
   height: 500px;
   width: 100%;
-  /* background-color: rgb(247, 250, 252);   */
+  background-color: rgb(247, 250, 252);  
   margin-top: 100px;
   padding-top: 36px;
   padding-bottom: 36px;
@@ -249,7 +250,19 @@ button:hover{
   
 
 }
+/* Styling for the Full Screen Image Modal */
+.image-modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80%;
+  margin-top: 5%;
+  border: 5px solid white;
+}
+
+
 .feat-prod-img{
+  cursor: zoom-in; 
   height: 400px;
   width: 600px;
   background-image: url(Data/Dumbells/Adjustable-Dumbells/dm-adj-1.jpg);
@@ -257,6 +270,29 @@ button:hover{
   background-repeat: no-repeat;
   margin-top: 30px;
 
+}
+/* Full screen modal background */
+#imageModal {
+  background-color: white; /* Pure black for cinema feel */
+}
+
+/* Make image fill the screen */
+.full-screen-preview {
+  width: 100vw;
+  height: 100vh;
+  object-fit: contain; /* Shows full image without cropping */
+  display: block;
+}
+
+/* Ensure X button stays on top of the full-screen image */
+#forceCloseImg {
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  font-size: 50px;
+  color: black;
+  z-index: 2000;
+  cursor: pointer;
 }
 .feat-prod-desc{
   
@@ -288,16 +324,8 @@ button:hover{
   border-radius: 20px;
   padding-left:10px ;
 }
-.add-cart{
-  color: black;
-  background-color:white ;
-  width: 340px;
-  box-shadow: 0px 0px 5px black;
-  border: 1px solid rgb(59, 58, 58);
-  margin-left: -5px;
 
-}
-.Buy{
+#Buy{
   color: white;
   background-color:rgb(0, 0, 0) ;
   width: 340px;
@@ -306,6 +334,58 @@ button:hover{
   margin-left: -5px;
 
 }
+/* The Background Overlay */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+}
+
+/* The Modal Box */
+.modal-content {
+  background-color: white;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+  position: relative;
+  color: black;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+#addToCartBtn{
+  color: black;
+  border: 1px solid black;
+  width: 340px;
+  margin-left: -5px;
+}
+ #checkout{
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  border: 1px solid black;
+
+}
+.close-btn1 {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+/* Footer */
 footer{
   height: 500px;
   width: 100%;
