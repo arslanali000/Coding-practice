@@ -1,5 +1,6 @@
 let boxes = document.querySelectorAll(".box");
 let resetBtn = document.querySelector("#reset-button");
+let resetBtn1 = document.querySelector("#reset-button1");
 let winnerModal = document.querySelector("#winnerModal");
 let winnerMsg = document.querySelector(".winnerMsg" );
 let newGameBtn = document.querySelector("#newGameBtn");
@@ -13,7 +14,7 @@ const winPatterns = [
     [3, 4, 5], [6, 7, 8]
 ];
 
-const resetGame = () => {
+let resetGame = () => {
     turnO = true;
     count = 0; // Reset count
     boxes.forEach(box => {
@@ -25,7 +26,18 @@ const resetGame = () => {
     resetBtn.classList.add("spin-once");
     setTimeout(() => resetBtn.classList.remove("spin-once"), 500);
 };
-
+ const resetGame1 = () => {
+    turnO = true;
+    count = 0; // Reset count
+    boxes.forEach(box => {
+        box.innerText = "";
+        box.disabled = false;
+    });
+    winnerModal.style.display = "none";
+    
+    resetBtn.classList.add("spin-once");
+    setTimeout(() => resetBtn.classList.remove("spin-once"), 500);
+};
 // Function for Draw
 const gameDraw = () => {
     winnerMsg.innerHTML = `
@@ -85,4 +97,5 @@ const checkWinner = () => {
 };
 
 resetBtn.addEventListener("click", resetGame);
+resetBtn1.addEventListener("click", resetGame1);
 newGameBtn.addEventListener("click", resetGame);
