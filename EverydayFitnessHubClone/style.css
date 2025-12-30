@@ -175,20 +175,22 @@ strong{
   margin-left: 30px;
   margin-top: 25px;
 }
-button{
+.shop{
   color: white;
-  height: 50px;
+  height: 40px;
   width: 132px;
   margin-left: 30px;
   margin-top: 25px;
   background-color: transparent;
   border: 0.01px solid white;
   border-radius: 20px;
-  font-size: 15px;
-  font-weight: 700;
+  font-size: 22px;
+  text-align: center;
+  text-decoration: none;
+  padding-top: 15px;
   
 }
-button:hover{
+.shop:hover{
   
   box-shadow: 0px 1px 10px rgba(233, 225, 225, 0.35);
 }
@@ -332,6 +334,7 @@ button:hover{
   box-shadow: 0px 0px 5px black;
   border: 1px solid rgb(59, 58, 58);
   margin-left: -5px;
+  cursor: pointer;
 
 }
 /* The Background Overlay */
@@ -371,6 +374,7 @@ button:hover{
   border: 1px solid black;
   width: 340px;
   margin-left: -5px;
+  cursor: pointer;
 }
  #checkout{
   background-color: rgb(0, 0, 0);
