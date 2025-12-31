@@ -1,8 +1,18 @@
 # JavaScript Practice
 
-A collection of small projects built with HTML, CSS, and Vanilla JavaScript to strengthen front-end fundamentals and core JavaScript logic.
+A collection of front-end practice projects built with HTML, CSS, and Vanilla JavaScript to strengthen core web development fundamentals.
 
 ## Projects Included
+
+### Amazon Website Clone
+- Recreated key UI sections of the Amazon website
+- Focused on layout structure, responsiveness, and reusable components
+- Practiced real-world HTML and CSS patterns
+
+### EverydayFitnessHub Website Clone
+- Built a static website clone for a fitness-focused layout
+- Implemented responsive design and clean page structure
+- Practiced modern CSS styling and layout techniques
 
 ### Calculator
 - Handles user input and basic arithmetic operations
@@ -20,10 +30,10 @@ A collection of small projects built with HTML, CSS, and Vanilla JavaScript to s
 - Handles user interaction through events
 
 ## What This Repository Focuses On
+- HTML structure and semantic markup
+- CSS layout, responsiveness, and styling
 - JavaScript logic and control flow
-- DOM manipulation
-- Event-driven behavior
-- Basic state management
+- DOM manipulation and event-driven behavior
 - Clean separation of structure, style, and logic
 
 ## Tech Stack
@@ -32,4 +42,7 @@ A collection of small projects built with HTML, CSS, and Vanilla JavaScript to s
 - JavaScript (Vanilla)
 
 ## Purpose
-This repository was created to practice and solidify core JavaScript concepts that are foundational for building larger, real-world applications.
+This repository was created to practice and solidify front-end fundamentals that are foundational for building larger, real-world applications.
+
+## Live Demos
+(Add links here)
