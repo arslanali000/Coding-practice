@@ -44,5 +44,4 @@ A collection of front-end practice projects built with HTML, CSS, and Vanilla Ja
 ## Purpose
 This repository was created to practice and solidify front-end fundamentals that are foundational for building larger, real-world applications.
 
-## Live Demos
-(Add links here)
+
