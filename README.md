@@ -2,6 +2,9 @@
 
 A collection of front-end practice projects built with HTML, CSS, and Vanilla JavaScript to strengthen core web development fundamentals.
 
+### Live Link Included
+https://arslanali00
+0.github.io/Coding-practice/
 ## Projects Included
 
 ### Amazon Website Clone
