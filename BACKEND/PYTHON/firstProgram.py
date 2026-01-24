@@ -59,16 +59,55 @@
 # s2 = Student("Arslan", 2500)
 # print(s2.name, s2.rollNumber, s2.clg_name)
 # s2.welcome()
-class Student:
-  def __init__(self,name,marks):
-    self.name = name
-    self.marks = marks
-  def avgMarks(self):
-    sum = 0
-    for val in self.marks:
-      sum+=val
-    print(sum/3)
+# class Complex:
+#   def __init__(self,real, img):
+#     self.real = real
+#     self.img = img
+#   def showNumber(self):
+#     print(self.real, "i +", self.img,"j")
+#   def __add__(self, num2):
+#     newReal =self.real + num2.real
+#     newImg =self.img + num2.img
+#     return Complex(newReal, newImg)
+#   def __sub__(self, num2):
+#     newReal =self.real - num2.real
+#     newImg =self.img - num2.img
+#     return Complex(newReal, newImg) 
+#   def __mod__(self, num2):
+#     newReal =self.real % num2.real
+#     newImg =self.img % num2.img
+#     return Complex(newReal, newImg)  
 
+# num1 =Complex(1,3)
+# num1.showNumber()
 
-s1 = Student("Arslan",[23,40,32])
-s1.avgMarks()
+# num2 =Complex(5,9)
+# num2.showNumber()
+
+# num3 = num1 % num2
+# num3.showNumber()
+import random
+import string
+# target= random.randint(1,100)
+# # print(target)
+
+# while True:
+#   n= input("Enter a Number or Quit(Q): ")
+#   if(n== "Q" or "q"):
+#     break
+#   n= int(n)
+#   if(n<target):
+#     print("This number is Less than target")
+#   elif(n>target):
+#     print("This number is Greater than target")
+#   else:
+#     print("Congrats! You have choosed the correct Number")
+#     break
+
+# print("---Game Over!---") 
+pass_len = 8
+charVal = string.ascii_letters + string.digits + string.punctuation 
+passWord = ""
+for i in range(pass_len):
+ passWord += random.choice(charVal)
+print(passWord) 
