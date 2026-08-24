@@ -1,0 +1,110 @@
+      {% capture verified_icon %}
+        <svg class="pin-code-verified-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10.007 2.10377C8.60544 1.65006 7.08181 2.28116 6.41156 3.59306L5.60578 5.17023C5.51004 5.35763 5.35763 5.51004 5.17023 5.60578L3.59306 6.41156C2.28116 7.08181 1.65006 8.60544 2.10377 10.007L2.64923 11.692C2.71404 11.8922 2.71404 12.1078 2.64923 12.308L2.10377 13.993C1.65006 15.3946 2.28116 16.9182 3.59306 17.5885L5.17023 18.3942C5.35763 18.49 5.51004 18.6424 5.60578 18.8298L6.41156 20.407C7.08181 21.7189 8.60544 22.35 10.007 21.8963L11.692 21.3508C11.8922 21.286 12.1078 21.286 12.308 21.3508L13.993 21.8963C15.3946 22.35 16.9182 21.7189 17.5885 20.407L18.3942 18.8298C18.49 18.6424 18.6424 18.49 18.8298 18.3942L20.407 17.5885C21.7189 16.9182 22.35 15.3946 21.8963 13.993L21.3508 12.308C21.286 12.1078 21.286 11.8922 21.3508 11.692L21.8963 10.007C22.35 8.60544 21.7189 7.08181 20.407 6.41156L18.8298 5.60578C18.6424 5.51004 18.49 5.35763 18.3942 5.17023L17.5885 3.59306C16.9182 2.28116 15.3946 1.65006 13.993 2.10377L12.308 2.64923C12.1078 2.71403 11.8922 2.71404 11.692 2.64923L10.007 2.10377ZM6.75977 11.7573L8.17399 10.343L11.0024 13.1715L16.6593 7.51465L18.0735 8.92886L11.0024 15.9999L6.75977 11.7573Z"></path></svg>
+      {% endcapture %}
+
+      {% capture error_icon %}
+        <svg class="pin-code-error-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+        </svg>
+      {% endcapture %}
+      
+      <div class="pin-code-checker" style="max-width: 100%;">
+      <div class="pin-code-content" style="display: flex; justify-content: flex-start; align-items: center; gap: 1rem;">
+        <div class="field">
+          <input
+            class="field__input"
+            autocomplete="off"
+            type="text"
+            id="pin-code-checker"
+            name="pin-code-checker"
+            placeholder=""
+            inputmode="numeric"
+            maxlength="6"
+          >
+          <label class="field__label" for="pin-code-checker">{{ 'Enter pin code' }}</label>
+        </div>
+        <button class="button pin-code-check-btn">{{ 'Check' }}</button>
+       </div>
+       <div class="pin-code-success-msg" style="display: none; justify-content: flex-start; align-items: center; gap: 0.5rem; margin-top: 0.3rem;">
+        <span style="display: grid; place-items: center;">{{ verified_icon }}</span>
+        <small class="pin-code-success-text" style="display: none;"></small>
+       </div>
+       <div class="pin-code-err-msg" style="display: none; justify-content: flex-start; align-items: center; gap: 0.5rem; margin-top: 0.3rem;">
+        <span style="display: grid; place-items: center;">{{ error_icon }}</span>
+         <small>{{ 'Enter correct pin code.' }}</small>
+       </div>
+       </div>
+
+
+       <style>
+        .pin-code-verified-icon{
+            width: 18px;
+            height: 18px;
+            color: seagreen;
+        }
+        .pin-code-error-icon{
+          color: #cc0000;
+        }
+       </style>
+
+       <script>
+        const input = document.querySelector("#pin-code-checker");
+        const btn = document.querySelector(".pin-code-check-btn");
+        const successMsgDiv = document.querySelector(".pin-code-success-msg");
+        const successMsgText = document.querySelector(".pin-code-success-text");
+        const errorMsg = document.querySelector(".pin-code-err-msg");
+
+        input.addEventListener("input", () =>{
+          input.value = input.value.replace(/\D/g, "");
+          if (input.value.startsWith("0")){
+           input.value = input.value.slice(1);
+          }
+        });
+
+
+        btn.addEventListener("click", fetchPinCodes);
+
+        function getDeliveryDate(addDays){
+          const today = new Date();
+          const deliveryDate = new Date(today);
+          deliveryDate.setDate(today.getDate() + addDays);
+
+          const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+          const dayIndex = deliveryDate.getDay();
+          
+          const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+          const monthIndex = deliveryDate.getMonth();
+          
+          return `Get delivery before ${days[dayIndex]}, ${deliveryDate.getDate()} ${months[monthIndex]} if ordered today.`;
+        }
+
+        async function fetchPinCodes(){
+            const pin = input.value.trim();
+            const pinCode = Number(pin);
+
+            try{
+                const response = await fetch(`https://api.postalpincode.in/pincode/${pinCode}`);
+                const data = await response.json();
+                console.log(data[0]);
+                const info = data[0];
+                if (info.Status === "Success"){
+                    errorMsg.style.display = "none";
+                    successMsgText.style.display = "block";
+                    successMsgText.textContent =  getDeliveryDate(8);
+                    successMsgDiv.style.display = "flex";
+                }else{
+                    successMsgDiv.style.display = "none";
+                    successMsgText.style.display = "none";
+                    errorMsg.style.display = "flex";
+                }
+
+            }
+            catch(error){
+                console.log("There is some bug here.", error);
+            }   
+    } 
+  
+       </script>
+
+
+    

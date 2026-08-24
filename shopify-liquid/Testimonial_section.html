@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .main-container-testimonial-section {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; 
+      background-color: #f5f5f5; 
+      gap: 20px;
+      overflow-x: auto;
+    }
+
+    .card-testimonial-section {
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: auto;
+      background-color: #cfcdcd; 
+      width: 320px;
+      height: 450px;
+      border-radius: 10px; 
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+      text-align: center; 
+    }
+    .top-bar {
+      width: 100%;
+      height: 25%;
+      background-color: #d80a0a; 
+      border-radius: 10px 10px 0 0; 
+      clip-path: polygon(0 1%, 100% 0, 100% 80%, 0% 100%);
+
+    }
+    .content-bar {
+      width: 100%;
+      height: 50%;
+      
+    }
+    .bottom-bar {
+      width: 100%;
+      height: 25%;
+      background-color: #d80a0a; 
+      border-radius: 0px 0px 10px 10px; 
+      clip-path: polygon(0% 20%, 100% 0, 100% 100%, 0% 100%);
+
+    }
+    .content-sec {
+      width: 100%;
+      position: relative;
+    }
+    .content-sec img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-top: -60px; 
+      border: 4px solid white; 
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    @media screen and (max-width: 768px) {
+      .main-container-testimonial-section {
+        flex-direction: column;
+        height: auto; 
+        padding: 100px 20px; 
+      }
+      .card-testimonial-section {
+        width: 90%; 
+        height: auto; 
+      }
+      
+      .content-sec img {
+        width: 80px;
+        height: 80px;
+        margin-top: 10px; 
+      }
+
+      
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main-container-testimonial-section">
+    <div class="card-testimonial-section">  
+      <div class="top-bar">
+
+      </div>
+      <div class="content-bar">
+        <div class="content-sec">
+          <img src="Images/reveiw-img.jpg" alt="5 stars">
+          <h2>Emily</h2>
+          <p style="padding: 0 20px; margin-top: 10px;">"I recently purchased a pair of sunglasses from this store and I am absolutely thrilled with my purchase! The quality is outstanding, the design is stylish, and they fit perfectly. I've received so many compliments on them already. Highly recommend!"</p>
+        </div>
+
+      </div>
+      <div class="bottom-bar">
+         <img src="https://cdn.shopify.com/s/files/1/0783/9377/0228/files/rating-50.png?v=1770784003" alt="5 stars" style="width: 100px; margin-top: 50px;">
+      </div>
+
+    </div>
+    <div class="card-testimonial-section">  
+      <div class="top-bar">
+
+      </div>
+      <div class="content-bar">
+        <div class="content-sec">
+          <img src="Images/reveiw-img.jpg" alt="5 stars">
+          <h2>Emily</h2>
+          <p style="padding: 0 20px; margin-top: 10px;">"I recently purchased a pair of sunglasses from this store and I am absolutely thrilled with my purchase! The quality is outstanding, the design is stylish, and they fit perfectly. I've received so many compliments on them already. Highly recommend!"</p>
+        </div>
+
+      </div>
+      <div class="bottom-bar">
+         <img src="https://cdn.shopify.com/s/files/1/0783/9377/0228/files/rating-50.png?v=1770784003" alt="5 stars" style="width: 100px; margin-top: 50px;">
+      </div>
+
+    </div>
+    <div class="card-testimonial-section">  
+      <div class="top-bar">
+
+      </div>
+      <div class="content-bar">
+        <div class="content-sec">
+          <img src="Images/reveiw-img.jpg" alt="5 stars">
+          <h2>Emily</h2>
+          <p style="padding: 0 20px; margin-top: 10px;">"I recently purchased a pair of sunglasses from this store and I am absolutely thrilled with my purchase! The quality is outstanding, the design is stylish, and they fit perfectly. I've received so many compliments on them already. Highly recommend!"</p>
+        </div>
+
+      </div>
+      <div class="bottom-bar">
+         <img src="https://cdn.shopify.com/s/files/1/0783/9377/0228/files/rating-50.png?v=1770784003" alt="5 stars" style="width: 100px; margin-top: 50px;">
+      </div>
+
+    </div>
+    <div class="card-testimonial-section">  
+      <div class="top-bar">
+
+      </div>
+      <div class="content-bar">
+        <div class="content-sec">
+          <img src="Images/reveiw-img.jpg" alt="5 stars">
+          <h2>Emily</h2>
+          <p style="padding: 0 20px; margin-top: 10px;">"I recently purchased a pair of sunglasses from this store and I am absolutely thrilled with my purchase! The quality is outstanding, the design is stylish, and they fit perfectly. I've received so many compliments on them already. Highly recommend!"</p>
+        </div>
+
+      </div>
+      <div class="bottom-bar">
+         <img src="https://cdn.shopify.com/s/files/1/0783/9377/0228/files/rating-50.png?v=1770784003" alt="5 stars" style="width: 100px; margin-top: 50px;">
+      </div>
+
+    </div>
+    
+    
+  </div>
+
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .overlapping-image-container {
+      position: relative;
+      width: 300px; 
+      height: 300px; 
+    }
+
+    .image {
+      position: absolute;
+      width: 100px; 
+      height: 100px; 
+      @media screen and (max-width: 768px) {
+        width: 80px; 
+        height: 80px; 
+        
+      }
+    }
+
+    .image1 { top: 0; left: 0; }
+    .image2 { top: 20px; left: 20px; }
+    .image3 { top: 40px; left: 40px; }
+    .image4 { top: 60px; left: 60px; }
+    .image5 { top: 80px; left: 80px; }
+
+    .text {
+      position: absolute;
+      bottom: 60px;
+      left: 10px;
+      font-size: 18px;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 5px;
+    }
+    .stars {
+      position: absolute;
+      bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlapping-image-container">
+    <img src="https://cdn.shopify.com/s/files/1/0783/9377/0228/files/rb-blu.webp?v=1760507205" alt="Image 1" class="image image1">
+    <img src="https://cdn.shopify.com/s/files/1/0783/9377/0228/files/rb-grn.webp?v=1760507205" alt="Image 2" class="image image2">
+    <img src="https://cdn.shopify.com/s/files/1/0783/9377/0228/files/RB-PRPL.webp?v=1760507205" alt="Image 3" class="image image3">
+    <img src="https://cdn.shopify.com/s/files/1/0783/9377/0228/files/rb-blk.webp?v=1760507205" alt="Image 4" class="image image4">
+    <img src="https://cdn.shopify.com/s/files/1/0783/9377/0228/files/rb-red.webp?v=1760507205" alt="Image 5" class="image image5">
+
+    <p class="text">The RB Collection </p>
+    <span class="stars"><img src="https://cdn.shopify.com/s/files/1/0783/9377/0228/files/rating-50.png?v=1770784003" alt="5 stars">(5.0)</span>
+  </div>
+  
+</body>
+</html>

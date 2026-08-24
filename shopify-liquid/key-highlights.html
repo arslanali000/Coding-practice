@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Key Highlights</title>
+  <style>
+   
+    .pkh-main-container {
+     
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .pkh-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .pkh-box {
+      width: 45%;
+      padding: 15px;
+      border-radius: 10px; 
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+    .pkh-key {
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .pkh-value {
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    .pkh-disclaimer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #555; 
+    }
+    @media (max-width: 480px) {
+      h2{
+        font-size: 18px;
+      }
+      .pkh-key {
+        font-size: 15px;
+      }
+      .pkh-value {
+        font-size: 12px;
+      }
+       .pkh-box {
+        width: 100%;
+      }
+    }
+  </style>  
+</head>
+<body>
+  <div class="pkh-main-container">
+    <h2>Key Highlights</h2>
+    <div class="pkh-container">
+      <div class="pkh-box">
+        <span class="pkh-key">Fabric</span>
+        <span class="pkh-value">Premium organic cotton</span>
+      </div>
+      <div class="pkh-box">
+        <span class="pkh-key">Fit</span>
+        <span class="pkh-value">Straight Formal Fit</span>
+      </div>
+      <div class="pkh-box">
+        <span class="pkh-key">Rise</span>
+        <span class="pkh-value">Mid Rise</span>
+      </div>
+      <div class="pkh-box">
+        <span class="pkh-key">Waistband</span>
+        <span class="pkh-value">Elastic Waistband</span>
+      </div>
+      <div class="pkh-box">
+        <span class="pkh-key">Occasion</span>
+        <span class="pkh-value">Casual</span>
+      </div>
+      <div class="pkh-box">
+        <span class="pkh-key">WashCare</span>
+        <span class="pkh-value">Machine Washable</span>
+      </div>
+
+   </div>
+   <div class="pkh-disclaimer">Disclaimer: This is a sample disclaimer text.</div>
+  </div>
+</body>
+</html>
+
+

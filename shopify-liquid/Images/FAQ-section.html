@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <title>FAQs</title>
+  <style>
+    .accordion-container {
+      width: 80%;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .single-accordion {
+      margin-bottom: 10px;
+    }
+    .single-accordion button {
+      width: 100%;
+      position: relative;
+      padding: 15px;
+      background-color: #f0f0f0;
+      border: none;
+      border-radius: 5px;
+      display: block;
+      text-align: left;
+      cursor: pointer;
+    }
+    .single-accordion button span {
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .single-accordion button svg {
+      position: absolute;
+      height: 20px;
+      right: 20px;
+    }
+    .accordion-content {
+      padding: 0 15px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .show{
+      display: inline-block;
+    }
+    .hide{
+      display: none;
+    }
+   
+    @media (max-width: 480px) {
+      .single-accordion button span {
+        font-size: 14px;
+      }
+      .size-6 {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="accordion-container" x-data="{ open: 0 }" x-init="$refs.content.scrollHeight">
+    <div class="single-accordion">
+      <button @click="open !== 1 ? open = 1 : open = null">
+          <svg x-bind:class="open === 1 ? 'hide' : 'show'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+          </svg>
+        <svg x-bind:class="open === 1 ? 'show' : 'hide'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+        </svg>
+        <span>What is the return policy?</span>
+     </button>
+      <div class="accordion-content" x-ref="content"
+      x-bind:style="open === 1 ? 'max-height: ' + $refs.content.scrollHeight + 'px' : 'max-height: 0px'">
+          <p>Our return policy allows you to return products within 30 days of purchase. Please ensure that the items are in their original condition and packaging. For more details, please visit our return policy page.</p>
+        </div>
+
+
+    </div>
+    <div class="single-accordion">
+      <button @click="open !== 2 ? open = 2 : open = null">
+          <svg x-bind:class="open === 2 ? 'hide' : 'show'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+          </svg>
+        <svg x-bind:class="open === 2 ? 'show' : 'hide'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+        </svg>
+        <span>What is the return policy?</span>
+     </button>
+      <div class="accordion-content" x-bind:style="open === 2 ? 'max-height: ' + $refs.content.scrollHeight + 'px' : 'max-height: 0px'" x-ref="content" >
+          <p>Our return policy allows you to return products within 30 days of purchase. Please ensure that the items are in their original condition and packaging. For more details, please visit our return policy page.
+            Our return policy allows you to return products within 30 days of purchase. Please ensure that the items are in their original condition and packaging. For more details, please visit our return policy page.
+            Our return policy allows you to return products within 30 days of purchase. Please ensure that the items are in their original condition and packaging. For more details, please visit our return policy page.
+          </p>
+        </div>
+
+
+    </div>
+    <div class="single-accordion">
+      <button @click="open !== 3 ? open = 3 : open = null">
+          <svg x-bind:class="open === 3 ? 'hide' : 'show'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+          </svg>
+        <svg x-bind:class="open === 3 ? 'show' : 'hide'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+        </svg>
+        <span>What is the return policy?</span>
+     </button>
+      <div class="accordion-content" x-bind:style="open === 3 ? 'max-height: ' + $refs.content.scrollHeight + 'px' : 'max-height: 0px'" x-ref="content" >
+          <p>Our return policy allows you to return products within 30 days of purchase. Please ensure that the items are in their original condition and packaging. For more details, please visit our return policy page.
+            Our return policy allows you to return products within 30 days of purchase. Please ensure that the items are in their original condition and packaging. For more details, please visit our return policy page.
+            Our return policy allows you to return products within 30 days of purchase. Please ensure that the items are in their original condition and packaging. For more details, please visit our return policy page.
+
+          </p>
+        </div>
+
+
+    </div>
+  </div>
+</body>
+</html>

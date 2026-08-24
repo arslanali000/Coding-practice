@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HoodyWorld — Redesign Mockup</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0a0a0a;
+    --white: #ffffff;
+    --red: #e8271a;
+    --red-dark: #b81e13;
+    --grey-light: #f5f5f5;
+    --grey-mid: #e0e0e0;
+    --grey-text: #666;
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'Outfit', sans-serif;
+  }
+
+  body { font-family: var(--font-body); background: var(--white); color: var(--black); overflow-x: hidden; }
+
+  /* ── ANNOUNCEMENT BAR ── */
+  .announcement {
+    background: var(--red);
+    color: var(--white);
+    text-align: center;
+    padding: 9px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--black);
+    padding: 0 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .logo {
+    font-family: var(--font-display);
+    font-size: 32px;
+    color: var(--white);
+    letter-spacing: 0.05em;
+  }
+  .logo span { color: var(--red); }
+
+  nav { display: flex; gap: 32px; align-items: center; }
+  nav a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--white); }
+
+  .nav-cta {
+    background: var(--red);
+    color: var(--white) !important;
+    padding: 10px 22px;
+    border-radius: 4px;
+    font-weight: 600 !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--red-dark) !important; }
+
+  .header-contact {
+    color: rgba(255,255,255,0.6);
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .header-contact span { color: var(--white); font-weight: 600; }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--black);
+    min-height: 88vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 64px 80px 80px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    background: var(--red);
+    color: var(--white);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 2px;
+    margin-bottom: 28px;
+    width: fit-content;
+  }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(56px, 7vw, 90px);
+    color: var(--white);
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    margin-bottom: 24px;
+  }
+  .hero h1 em { color: var(--red); font-style: normal; }
+
+  .hero-sub {
+    color: rgba(255,255,255,0.6);
+    font-size: 16px;
+    line-height: 1.7;
+    max-width: 420px;
+    margin-bottom: 40px;
+  }
+
+  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  .btn-primary {
+    background: var(--red);
+    color: var(--white);
+    padding: 15px 32px;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: var(--red-dark); transform: translateY(-1px); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    padding: 15px 32px;
+    font-size: 15px;
+    font-weight: 600;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: border-color 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--white); }
+
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+    background: #111;
+  }
+
+  .hero-img-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #111 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hoodie-visual {
+    width: 280px;
+    height: 320px;
+    background: var(--red);
+    border-radius: 40% 40% 20% 20% / 30% 30% 20% 20%;
+    position: relative;
+    opacity: 0.9;
+  }
+  .hoodie-visual::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 40px;
+    background: #c0201a;
+    border-radius: 50% 50% 0 0;
+  }
+  .hoodie-visual::after {
+    content: 'HOODIE PRODUCT IMAGE';
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.3);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+  }
+
+  /* ── TRUST BAR ── */
+  .trust-bar {
+    background: var(--white);
+    border-bottom: 1px solid var(--grey-mid);
+    padding: 20px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .trust-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--red);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .trust-item strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .trust-item span {
+    font-size: 12px;
+    color: var(--grey-text);
+  }
+
+  .trust-divider {
+    width: 1px;
+    height: 40px;
+    background: var(--grey-mid);
+  }
+
+  .trustpilot-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--grey-light);
+    padding: 10px 18px;
+    border-radius: 6px;
+  }
+  .stars { color: #00b67a; font-size: 18px; letter-spacing: 2px; }
+  .tp-text strong { display: block; font-size: 13px; }
+  .tp-text span { font-size: 11px; color: var(--grey-text); }
+
+  /* ── SECTION HEADERS ── */
+  .section { padding: 80px 80px; }
+  .section-light { background: var(--grey-light); }
+  .section-dark { background: var(--black); }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 4vw, 52px);
+    line-height: 1.0;
+    letter-spacing: 0.02em;
+    margin-bottom: 16px;
+  }
+  .section-title.white { color: var(--white); }
+  .section-sub {
+    font-size: 15px;
+    color: var(--grey-text);
+    max-width: 500px;
+    line-height: 1.7;
+  }
+  .section-sub.white { color: rgba(255,255,255,0.6); }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 48px;
+  }
+
+  /* ── CATEGORIES ── */
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+  }
+
+  .cat-card {
+    background: var(--black);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 3/4;
+    cursor: pointer;
+    transition: transform 0.25s;
+  }
+  .cat-card:hover { transform: translateY(-4px); }
+
+  .cat-bg {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+  }
+  .cat-bg.c1 { background: linear-gradient(160deg, #1a3a6b, #0d1f3c); }
+  .cat-bg.c2 { background: linear-gradient(160deg, #6b1a1a, #3c0d0d); }
+  .cat-bg.c3 { background: linear-gradient(160deg, #1a6b3a, #0d3c1f); }
+  .cat-bg.c4 { background: linear-gradient(160deg, #4a1a6b, #270d3c); }
+  .cat-bg.c5 { background: linear-gradient(160deg, #3a3a3a, #1a1a1a); }
+
+  .cat-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 16px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.85));
+  }
+  .cat-overlay h3 {
+    font-family: var(--font-display);
+    color: var(--white);
+    font-size: 20px;
+    letter-spacing: 0.04em;
+    margin-bottom: 4px;
+  }
+  .cat-overlay span {
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* ── HOW IT WORKS ── */
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    position: relative;
+  }
+
+  .steps-grid::before {
+    content: '';
+    position: absolute;
+    top: 28px;
+    left: 12.5%;
+    right: 12.5%;
+    height: 2px;
+    background: var(--red);
+    z-index: 0;
+  }
+
+  .step {
+    text-align: center;
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-num {
+    width: 56px;
+    height: 56px;
+    background: var(--red);
+    color: var(--white);
+    font-family: var(--font-display);
+    font-size: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .step h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .step p {
+    font-size: 14px;
+    color: var(--grey-text);
+    line-height: 1.6;
+  }
+
+  /* ── PRODUCTS ── */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .product-card {
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--white);
+    border: 1px solid var(--grey-mid);
+    transition: box-shadow 0.2s, transform 0.2s;
+    cursor: pointer;
+  }
+  .product-card:hover {
+    box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+  }
+
+  .product-img {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 56px;
+  }
+  .p1 { background: #eef2ff; }
+  .p2 { background: #fff0f0; }
+  .p3 { background: #f0fff4; }
+  .p4 { background: #fffbf0; }
+
+  .product-info { padding: 16px; }
+  .product-info h4 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+  .product-info .prod-sub { font-size: 13px; color: var(--grey-text); margin-bottom: 12px; }
+  .product-info .prod-price { font-size: 14px; font-weight: 700; color: var(--red); }
+
+  .btn-quote {
+    display: block;
+    width: 100%;
+    background: var(--black);
+    color: var(--white);
+    border: none;
+    padding: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-family: var(--font-body);
+    letter-spacing: 0.04em;
+    transition: background 0.2s;
+  }
+  .btn-quote:hover { background: var(--red); }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .testimonial {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 28px;
+  }
+
+  .t-stars { color: #ffd700; font-size: 16px; margin-bottom: 14px; letter-spacing: 2px; }
+  .t-text {
+    color: rgba(255,255,255,0.8);
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+  .t-author strong { color: var(--white); font-size: 14px; display: block; }
+  .t-author span { color: rgba(255,255,255,0.4); font-size: 12px; }
+
+  /* ── CTA BANNER ── */
+  .cta-banner {
+    background: var(--red);
+    padding: 64px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .cta-banner h2 {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 4vw, 52px);
+    color: var(--white);
+    line-height: 1.0;
+    letter-spacing: 0.02em;
+  }
+  .cta-banner p {
+    color: rgba(255,255,255,0.85);
+    font-size: 15px;
+    margin-top: 10px;
+    max-width: 400px;
+  }
+
+  .btn-white {
+    background: var(--white);
+    color: var(--red);
+    padding: 16px 36px;
+    font-size: 15px;
+    font-weight: 700;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-family: var(--font-body);
+    transition: transform 0.15s;
+  }
+  .btn-white:hover { transform: translateY(-2px); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #0a0a0a;
+    padding: 64px 80px 32px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 48px;
+  }
+
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 28px;
+    color: var(--white);
+    letter-spacing: 0.05em;
+    margin-bottom: 14px;
+  }
+  .footer-logo span { color: var(--red); }
+
+  .footer-desc {
+    font-size: 14px;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .footer-contact-item {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 6px;
+  }
+  .footer-contact-item strong { color: var(--white); }
+
+  .footer-col h4 {
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .footer-col a {
+    display: block;
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 10px;
+    transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--white); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-bottom span {
+    font-size: 13px;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .link-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--red);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .link-arrow::after { content: '→'; }
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announcement">
+  🎉 FREE DELIVERY on all orders over £200 &nbsp;·&nbsp; We Beat Any Quote — Guaranteed &nbsp;·&nbsp; 15+ Years Experience
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">HOODY<span>WORLD</span></div>
+  <nav>
+    <a href="#">Garments</a>
+    <a href="#">Leavers Hoodies</a>
+    <a href="#">Ski Trip</a>
+    <a href="#">University</a>
+    <a href="#">Gallery</a>
+    <a href="#">FAQ</a>
+    <a href="#" class="nav-cta">Get A Quote</a>
+  </nav>
+  <div class="header-contact">📞 <span>01386 837 837</span></div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">15+ Years of Custom Apparel</div>
+    <h1>GEAR THAT <em>REPRESENTS</em> YOU</h1>
+    <p class="hero-sub">Custom hoodies, sweatshirts and apparel for schools, universities, sports teams and businesses. No design fees. No minimum fuss.</p>
+    <div class="hero-btns">
+      <a href="#" class="btn-primary">Get a Free Quote</a>
+      <a href="#" class="btn-outline">View Gallery</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-placeholder">
+      <div class="hoodie-visual"></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item">
+    <div class="trust-icon">🚚</div>
+    <div>
+      <strong>Free Delivery</strong>
+      <span>On orders over £200</span>
+    </div>
+  </div>
+  <div class="trust-divider"></div>
+  <div class="trust-item">
+    <div class="trust-icon">✏️</div>
+    <div>
+      <strong>No Design Fees</strong>
+      <span>We design it for free</span>
+    </div>
+  </div>
+  <div class="trust-divider"></div>
+  <div class="trust-item">
+    <div class="trust-icon">💰</div>
+    <div>
+      <strong>Price Match Promise</strong>
+      <span>We beat any quote</span>
+    </div>
+  </div>
+  <div class="trust-divider"></div>
+  <div class="trust-item">
+    <div class="trust-icon">🏆</div>
+    <div>
+      <strong>15+ Years Experience</strong>
+      <span>Trusted by 1000s of schools</span>
+    </div>
+  </div>
+  <div class="trust-divider"></div>
+  <div class="trustpilot-badge">
+    <div class="stars">★★★★★</div>
+    <div class="tp-text">
+      <strong>Excellent</strong>
+      <span>Rated on Trustpilot</span>
+    </div>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section class="section">
+  <div class="section-header">
+    <div>
+      <div class="section-label">What We Do</div>
+      <div class="section-title">SHOP BY OCCASION</div>
+      <p class="section-sub">From school leavers to ski trips — we've got the perfect hoodie for every moment.</p>
+    </div>
+    <a href="#" class="link-arrow">View All Garments</a>
+  </div>
+  <div class="categories-grid">
+    <div class="cat-card">
+      <div class="cat-bg c1">🎿</div>
+      <div class="cat-overlay">
+        <h3>SKI TRIP</h3>
+        <span>School & Group Hoodies</span>
+      </div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-bg c2">🎓</div>
+      <div class="cat-overlay">
+        <h3>LEAVERS</h3>
+        <span>Primary & Secondary</span>
+      </div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-bg c3">🏛️</div>
+      <div class="cat-overlay">
+        <h3>UNIVERSITY</h3>
+        <span>Societies & Freshers</span>
+      </div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-bg c4">🏉</div>
+      <div class="cat-overlay">
+        <h3>SPORTS TEAMS</h3>
+        <span>Any Sport, Any Size</span>
+      </div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-bg c5">🏢</div>
+      <div class="cat-overlay">
+        <h3>BUSINESSES</h3>
+        <span>Branded Workwear</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section section-light">
+  <div style="text-align:center; margin-bottom: 56px;">
+    <div class="section-label" style="text-align:center;">Simple Process</div>
+    <div class="section-title" style="text-align:center;">HOW IT WORKS</div>
+    <p class="section-sub" style="margin: 0 auto; text-align:center;">Getting your custom hoodies is easier than you think. Here's our simple 4-step process.</p>
+  </div>
+  <div class="steps-grid">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Choose Your Garment</h3>
+      <p>Browse our full range of hoodies, sweatshirts, t-shirts and more. Pick the style that fits your group.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Get a Free Quote</h3>
+      <p>Fill in our quick quote form. Tell us your quantity, design ideas, and deadline. No commitment needed.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>We Design It Free</h3>
+      <p>Our in-house designers create your artwork at no charge. You approve before we print anything.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h3>We Print & Deliver</h3>
+      <p>Once approved, we produce and ship your order. Free delivery on orders over £200.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED GARMENTS -->
+<section class="section">
+  <div class="section-header">
+    <div>
+      <div class="section-label">Popular Picks</div>
+      <div class="section-title">FEATURED GARMENTS</div>
+      <p class="section-sub">Our most loved styles, ready to be customised exactly how you want them.</p>
+    </div>
+    <a href="#" class="link-arrow">View All Garments</a>
+  </div>
+  <div class="products-grid">
+    <div class="product-card">
+      <div class="product-img p1">👕</div>
+      <div class="product-info">
+        <h4>College Unisex Hoodie</h4>
+        <div class="prod-sub">JH001 · Available in 20 colours</div>
+        <div class="prod-price">From £18.99</div>
+        <button class="btn-quote">Get a Quote</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-img p2">🧥</div>
+      <div class="product-info">
+        <h4>Adult 2-Tone Hoodie</h4>
+        <div class="prod-sub">JH003 · Contrast panels</div>
+        <div class="prod-price">From £22.99</div>
+        <button class="btn-quote">Get a Quote</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-img p3">👚</div>
+      <div class="product-info">
+        <h4>Organic Hoodie</h4>
+        <div class="prod-sub">Eco-certified · Sustainable</div>
+        <div class="prod-price">From £24.99</div>
+        <button class="btn-quote">Get a Quote</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-img p4">🎽</div>
+      <div class="product-info">
+        <h4>Varsity Jacket</h4>
+        <div class="prod-sub">College style · Premium finish</div>
+        <div class="prod-price">From £34.99</div>
+        <button class="btn-quote">Get a Quote</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section section-dark">
+  <div style="text-align:center; margin-bottom: 56px;">
+    <div class="section-label" style="text-align:center;">What People Say</div>
+    <div class="section-title white" style="text-align:center;">TRUSTED BY THOUSANDS</div>
+    <p class="section-sub white" style="margin: 0 auto; text-align:center;">Real reviews from schools, universities and teams across the UK.</p>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">"Ordered leavers hoodies for our Year 6 class and the quality was outstanding. The design team was incredibly helpful and turnaround was faster than expected."</p>
+      <div class="t-author">
+        <strong>Sarah M.</strong>
+        <span>Primary School Teacher, Birmingham</span>
+      </div>
+    </div>
+    <div class="testimonial">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">"We've used HoodyWorld for our ski trip hoodies for the past 3 years. Never once let us down on quality or delivery. Highly recommend to any school trip coordinator."</p>
+      <div class="t-author">
+        <strong>James T.</strong>
+        <span>PE Teacher, Manchester</span>
+      </div>
+    </div>
+    <div class="testimonial">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">"Great service from start to finish. The online design tool made it easy to get exactly what our university society wanted. Will definitely be ordering again next year."</p>
+      <div class="t-author">
+        <strong>Priya K.</strong>
+        <span>University Society President, Leeds</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <div>
+    <h2>READY TO START YOUR ORDER?</h2>
+    <p>Get a free no-obligation quote in minutes. Our team is ready to help you create something great.</p>
+  </div>
+  <button class="btn-white">Get Your Free Quote →</button>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">HOODY<span>WORLD</span></div>
+      <p class="footer-desc">The UK's leading custom hoodie and personalised apparel specialist. Trusted by schools, universities and businesses for over 15 years.</p>
+      <div class="footer-contact-item">📞 <strong>01386 837 837</strong></div>
+      <div class="footer-contact-item">✉️ info@hoodyworld.co.uk</div>
+    </div>
+    <div class="footer-col">
+      <h4>Garments</h4>
+      <a href="#">Zipped Hoodies</a>
+      <a href="#">Non-Zipped Hoodies</a>
+      <a href="#">Organic Hoodies</a>
+      <a href="#">Sweatshirts</a>
+      <a href="#">T-Shirts</a>
+      <a href="#">Varsity Jackets</a>
+    </div>
+    <div class="footer-col">
+      <h4>Get A Quote</h4>
+      <a href="#">Leavers Hoodies</a>
+      <a href="#">Ski Trip Hoodies</a>
+      <a href="#">University Hoodies</a>
+      <a href="#">Sports Teams</a>
+      <a href="#">Military</a>
+      <a href="#">General Enquiry</a>
+    </div>
+    <div class="footer-col">
+      <h4>Help</h4>
+      <a href="#">FAQ</a>
+      <a href="#">How to Measure</a>
+      <a href="#">Gallery</a>
+      <a href="#">About Us</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Terms & Conditions</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 HoodyWorld. All rights reserved.</span>
+    <span>Designed with ❤️ for schools across the UK</span>
+  </div>
+</footer>
+
+</body>
+</html>

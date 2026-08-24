@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .delivert-date-container {
+        display: flex;
+        justify-content: space-evenly;
+        width: 80%;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        box-sizing: border-box;
+        background-color: rgb(236, 232, 226);
+        border: 0.5px solid black;
+        border-radius: 20px;
+      }
+      .delivery-date-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .delivery-date-content svg {
+        margin-bottom: 10px;
+        width: 25px;
+        height: 25px;
+      }
+      .delivery-date-content span {
+        margin-top: 5px;
+        font-size: 14px;
+        font-family: 'Times New Roman', Times, serif;
+      }
+      .span1 {
+        font-weight: bold;
+      }
+      @media (max-width: 480px) {
+        .delivert-date-container {
+          flex-direction: column;
+          align-items: center;
+        }
+        .delivery-date-content {
+          margin-bottom: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="delivert-date-container">
+      <div class="delivery-date-content">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-bag-check-fill"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0m-.646 5.354a.5.5 0 0 0-.708-.708L7.5 10.793 6.354 9.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"
+          />
+        </svg>
+        <span class="span1">Ordered</span>
+        <span>Mon 06 Feb</span>
+      </div>
+      <div class="delivery-date-content">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-airplane-fill"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M6.428 1.151C6.708.591 7.213 0 8 0s1.292.592 1.572 1.151C9.861 1.73 10 2.431 10 3v3.691l5.17 2.585a1.5 1.5 0 0 1 .83 1.342V12a.5.5 0 0 1-.582.493l-5.507-.918-.375 2.253 1.318 1.318A.5.5 0 0 1 10.5 16h-5a.5.5 0 0 1-.354-.854l1.319-1.318-.376-2.253-5.507.918A.5.5 0 0 1 0 12v-1.382a1.5 1.5 0 0 1 .83-1.342L6 6.691V3c0-.568.14-1.271.428-1.849"
+          />
+        </svg>
+        <span class="span1">Shipped</span>
+        <span>Tue 07 Feb</span>
+      </div>
+      <div class="delivery-date-content">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-box2-heart-fill"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M3.75 0a1 1 0 0 0-.8.4L.1 4.2a.5.5 0 0 0-.1.3V15a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4.5a.5.5 0 0 0-.1-.3L13.05.4a1 1 0 0 0-.8-.4zM8.5 4h6l.5.667V5H1v-.333L1.5 4h6V1h1zM8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132"
+          />
+        </svg>
+        <span class="span1">Delivered</span>
+        <span>Fri 10 Feb</span>
+      </div>
+    </div>
+  </body>
+</html>

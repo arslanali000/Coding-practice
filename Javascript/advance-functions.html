@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advance Functions</title>
+</head>
+<body>
+<button id="btn">Add to Cart</button>
+<p id="result"></p>
+
+
+  <script>
+    // const btn = document.getElementById("btn");
+    // const result = document.getElementById("result");
+    // let intervalFun = ()=>{
+    //    result.textContent = "Added";
+    //    if(timerId){
+    //     clearTimeout(timerId);
+    //    }
+    //   timerId= setTimeout(()=>{
+    //     result.textContent = ""
+    //     timerId = false;
+    //   },5000)
+
+    // }
+    // let timerId = false;
+    // btn.addEventListener('click', intervalFun )
+    // btn.removeEventListener('click', intervalFun)
+  //  const multiply = (a,b)=> a*b;
+   
+  //  console.log(multiply(5,6));
+   const countPositive = (array)=>{
+        let eggCount = 0;
+   console.log(array.filter(value=>{
+    if(value =="egg" && eggCount<2){
+      eggCount++;
+    return false;
+    }
+    else{
+      return true;
+    }
+    
+
+   })
+
+
+ ) };
+   countPositive(["orange","mango","egg","banana","egg","egg","egg"]);
+   
+  
+    
+
+ 
+   
+  </script>
+  
+</body>
+</html>

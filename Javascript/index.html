@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>Todo List</h2>
+  <div class="container">
+  <input type="text" id="myInput" placeholder="Todo name">
+  <input type="date" id="myDate">
+  <button class="addBtn">Add</button>
+  </div>
+  <div class="result">
+    
+  </div>
+  
+
+ 
+
+  <script>
+  const myInput = document.getElementById("myInput");
+  const myDate = document.getElementById("myDate");
+    const addBtn = document.querySelector(".addBtn");
+  const result = document.querySelector(".result");
+
+  const array = [];
+  function addTodo() {
+    const todoName = myInput.value;
+    const todoDate = myDate.value;
+
+    if (todoName && todoDate) {
+      array.push({name: todoName, date: todoDate});
+      console.log(array);
+      myInput.value = "";
+      myDate.value = "";
+    } else {
+      alert("Please enter both a name and a date for the todo item.");
+    }
+    displayTodos();
+  }
+  function displayTodos() {
+    result.innerHTML = "";
+    array.forEach((index)=> {
+      const { name, date } = index;
+      result.innerHTML += ` 
+      <div>${name}</div> 
+      <div>${date}</div>
+      <button class="deleteBtn">Delete</button>`;
+      });
+       document.querySelectorAll(".deleteBtn").forEach((delBtn, index)=>{
+    delBtn.addEventListener('click', ()=>{
+      array.splice(index, 1);
+      displayTodos();
+
+    });
+
+  });
+  };
+  addBtn.addEventListener("click", addTodo);
+ 
+ 
+</script>
+</body>
+</html>

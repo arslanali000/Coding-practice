@@ -4,6 +4,8 @@ const choices = document.querySelectorAll(".choice");
 const msg = document.querySelector(".msg");
 const userScorePara =document.querySelector("#user-score");
 const compScorePara = document.querySelector("#comp-score");
+const autoPlay= document.querySelector("#autoPlay");
+
 
 const genCompChoice = () => {
     const options = ["rock", "paper", "scissor"];
@@ -32,13 +34,17 @@ const showWinner = (userWin, userChoice, compChoice) => {
     }
 };
 
-const playGame = (userChoice) =>{
+
+ const playGame=(userChoice)=> {
   
     const compChoice = genCompChoice();
     
     if (userChoice == compChoice) {
     drawGame();
     }
+    
+    
+
     else{
         let userWin = true;
         if (userChoice == "rock") {
@@ -55,13 +61,53 @@ const playGame = (userChoice) =>{
         }
     };
 
-
-
-choices.forEach((choice)  => {
-    choice.addEventListener("click", () => {
-        const userChoice = choice.getAttribute("id");
-        playGame(userChoice);
-       
+    choices.forEach((choice)=>{
+        
+        
+        choice.addEventListener('click',()=>{
+        const playerChoice = document.querySelector('#Id');
+        
+        playGame(playerChoice);
     })
     
+
+    });
+    document.body.addEventListener('keydown',(event)=>{
+    if(event.key === 'r'){
+        playGame('rock');
+    }
+    else if(event.key=== 'p'){
+        playGame('paper');
+        
+    }
+    else if(event.key === 's'){
+        playGame('scissor');
+        
+
+    }
+    
 })
+
+//  let isAutoPlaying = false
+//  let intervalId;
+
+//  autoPlay.addEventListener("click", () => {
+//     if(!isAutoPlaying){
+//     intervalId= setInterval(()=>{
+//         const userChoice = genCompChoice();
+//         playGame(userChoice);
+//         isAutoPlaying = true;
+       
+//     },2000)
+// }
+// else{
+//     clearInterval(intervalId);
+//     isAutoPlaying = false
+
+// }
+
+// });
+    
+
+
+
