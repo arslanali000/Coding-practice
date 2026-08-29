@@ -70,6 +70,8 @@ export function renderOrderSummary(){
     const container = document.querySelector(`.js-item-${productId}`);
     container.remove();
     updateCartQuantity();
+    renderPaymentSummary();
+
 
     })
   let cartQuantity =0;
