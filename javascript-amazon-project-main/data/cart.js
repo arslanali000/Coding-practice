@@ -26,16 +26,21 @@ loadFromStorage();
 export function saveToStorage (){
   localStorage.setItem('cart', JSON.stringify(cart));
 }
-export function addToCart(productId) {
+export function addToCart(productId, quantity) {
     
-    const selectedQuantity= document.querySelector(`.products-quantity-${productId}`);
     let matchingItem;
     cart.forEach(item=>{
       if(productId === item.productId){
         matchingItem = item;
       }
     });
-     const quantitySelected = parseInt(selectedQuantity.value);
+     let quantitySelected;
+      if (quantity !== undefined) {
+        quantitySelected = quantity;
+      } else {
+        const selectedQuantity = document.querySelector(`.products-quantity-${productId}`);
+        quantitySelected = parseInt(selectedQuantity.value);
+      }
     if(matchingItem){
       matchingItem.quantity += quantitySelected;
       
