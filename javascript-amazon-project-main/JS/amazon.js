@@ -1,6 +1,8 @@
 import {cart, addToCart, calculateCartQuantity, saveToStorage} from '../data/cart.js';
 import {products} from '../data/products.js';
 import { formatCurrency } from './utils/money.js';
+
+
 let productGrid = document.querySelector(".products-grid")
 
 let productsHTML = '';
@@ -64,7 +66,7 @@ function quantityInCart(){
  let cartQuantity = calculateCartQuantity();
  
 
-    document.querySelector(".cart-quantity").innerHTML =cartQuantity;
+    document.querySelector('.cart-quantity').innerHTML =cartQuantity;
 }
 let timeout;
 
