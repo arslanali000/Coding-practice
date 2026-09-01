@@ -6,12 +6,17 @@ import { loadCart } from "../data/cart.js";
 // import '../data/backend-practice.js';
 
 async function loadPage() {
+  try {
   await Promise.all([
     loadProductsFetch(),
     new Promise((resolve) => {
       loadCart(resolve);
     })
   ]);
+} catch(error) {
+  console.error("Error loading data:", error);
+  // Handle the error, e.g., show an error message to the user
+}
 
   renderOrderSummary();
   renderPaymentSummary();
