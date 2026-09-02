@@ -1,6 +1,7 @@
 import {cart, addToCart, calculateCartQuantity, saveToStorage} from '../data/cart.js';
 import {products, loadProducts} from '../data/products.js';
 import { formatCurrency } from './utils/money.js';
+import {quantityInCart} from "./checkout/checkoutHeader.js";
 
 loadProducts(renderProductsGrid);
 function renderProductsGrid(){
@@ -64,12 +65,7 @@ function renderProductsGrid(){
   });
   productGrid.innerHTML = productsHTML;
 
-  function quantityInCart(){
-  let cartQuantity = calculateCartQuantity();
   
-
-      document.querySelector('.cart-quantity').innerHTML =cartQuantity;
-  }
   let timeout;
 
   function timeoutFunc(productId){

@@ -111,7 +111,6 @@ export function loadCart(func){
  
  xhr.addEventListener('load',()=>{
   
-console.log(xhr.response);
 func();
  })
  xhr.open('GET','https://supersimplebackend.dev/cart');

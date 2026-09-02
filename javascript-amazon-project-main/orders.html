@@ -45,7 +45,7 @@
 
         <a class="cart-link header-link" href="checkout.html">
           <img class="cart-icon" src="images/icons/cart-icon.png">
-          <div class="cart-quantity">3</div>
+          <div class="cart-quantity"></div>
           <div class="cart-text">Cart</div>
         </a>
       </div>
@@ -54,8 +54,8 @@
     <div class="main">
       <div class="page-title">Your Orders</div>
 
-      <div class="orders-grid">
-        <div class="order-container">
+      <div class="orders-grid js-order-grid">
+        <!-- <div class="order-container js-order-container">
           
           <div class="order-header">
             <div class="order-header-left-section">
@@ -132,9 +132,9 @@
               </a>
             </div>
           </div>
-        </div>
+        </div> -->
 
-        <div class="order-container">
+        <!-- <div class="order-container">
 
           <div class="order-header">
             <div class="order-header-left-section">
@@ -164,10 +164,10 @@
                 Intermediate Size Basketball
               </div>
               <div class="product-delivery-date">
-                Arriving on: June 17
+                Arriving on: ${order.date}
               </div>
               <div class="product-quantity">
-                Quantity: 2
+                Quantity: ${order.quantity}
               </div>
               <button class="buy-again-button button-primary">
                 <img class="buy-again-icon" src="images/icons/buy-again.png">
@@ -183,8 +183,9 @@
               </a>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
+    <script type="module" src="JS/orderPage.js"></script>
   </body>
 </html>

@@ -71,10 +71,11 @@ let cartQuantity =0;
       });
       const order = await response.json();
       addOrder(order);
+          window.location.href = 'orders.html';
+
     } catch (error) {
       console.error("Error placing order:", error);
     }
-    window.location.href = 'orders.html';
   });
 
 }

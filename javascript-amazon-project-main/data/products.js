@@ -62,7 +62,6 @@ export function loadProductsFetch(){
       }
       return new Product(productDetails);
     });
-    console.log("load products");
   }).catch((error)=>{
     console.log("error loading products");
   });
@@ -86,7 +85,6 @@ export function loadProducts(func){
  return new Product (productDetails);
 
 });
-console.log("load products");
 func();
  })
  xhr.addEventListener('error',()=>{
