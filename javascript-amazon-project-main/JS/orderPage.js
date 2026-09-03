@@ -2,23 +2,20 @@ import { orders } from "../data/order.js";
 import { getProduct, loadProductsFetch } from "../data/products.js";
 import {formatCurrency} from "../JS/utils/money.js";
 import dayjs from "https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js";
-import {calculateDeliveryDate, deliveryOptions, getdeliveryOptions} from '../data/deliveryOption.js';
-import { addToCart, calculateCartQuantity } from "../data/cart.js";
+import { addToCart } from "../data/cart.js";
 import {quantityInCart} from "../JS/checkout/checkoutHeader.js";
 
 loadProductsFetch().then(() => {
   renderOrders();
 });
+console.log(JSON.stringify(orders[0], null, 2));
 
 function renderOrders() {
 
 let orderHTML = '';
 orders.forEach(order => {
   let productHTML = '';
-  
-    const deliveryOptionId = order.deliveryOptionId;
-    let deliveryOption = getdeliveryOptions(deliveryOptionId);
-    const dateString = calculateDeliveryDate(deliveryOption);
+
 
   order.products.forEach(orderProduct => {
 
@@ -34,7 +31,7 @@ orders.forEach(order => {
                 ${product.name}
               </div>
               <div class="product-delivery-date">
-                Arriving on: ${calculateDeliveryDate(getdeliveryOptions(orderProduct.deliveryOptionId))}
+                Arriving on: ${dayjs(orderProduct.estimatedDeliveryTime).format('dddd, MMMM D')}
               </div>
               <div class="product-price">
                 ${product.getPrice()} 
@@ -49,7 +46,7 @@ orders.forEach(order => {
             </div>
 
             <div class="product-actions">
-              <a href="tracking.html?orderId=${order.id}">
+              <a href="tracking.html?orderId=${order.id}&productId=${orderProduct.productId}">
                 <button class="track-package-button button-secondary">
                   Track package
                 </button>
@@ -65,7 +62,7 @@ orders.forEach(order => {
             <div class="order-header-left-section">
               <div class="order-date">
                 <div class="order-header-label">Order Placed:</div>
-                <div>${dateString}</div>
+                <div>${dayjs(order.orderTime).format('MMMM D')}</div>
               </div>
               <div class="order-total">
                 <div class="order-header-label">Total:</div>

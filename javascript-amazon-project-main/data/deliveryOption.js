@@ -20,6 +20,9 @@ export function getdeliveryOptions (deliveryOptionId){
       if(option.id === deliveryOptionId){
         deliveryOption =option;
       }
+       if (!deliveryOption) {
+    console.warn('No matching delivery option for id:', deliveryOptionId, typeof deliveryOptionId);
+  }
 
     });
     return deliveryOption || deliveryOptions[0];
