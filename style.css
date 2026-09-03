@@ -802,8 +802,15 @@ footer{
     
     padding: 20px 0;
   }
+  .imageBox{
+     width: 90%;
+    height: 110%;
+    
+  }
   .image{
     background-position: center;
+    width: 70%;
+    height: 95%;
   }
 
   #s-names {
@@ -870,5 +877,16 @@ footer{
     width: 90%;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+ 
+
+  .image{
+    background-position: center;
+      background-image: url("data/Ali-fav.jpeg");
+    width: 85%;
+    height: 90%;
+    
   }
 }
